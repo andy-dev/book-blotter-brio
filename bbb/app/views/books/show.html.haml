@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Title:
   = @book.title
@@ -9,6 +7,8 @@
 %p
   %b Description:
   = @book.description
+%p
+  = image_tag @book.image.url
 
 = link_to 'Edit', edit_book_path(@book)
 \|
