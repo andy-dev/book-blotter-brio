@@ -6,7 +6,6 @@
       %th Title
       %th Author
       %th Description
-      %th Rating
       %th
       %th
       %th
@@ -17,7 +16,6 @@
         %td= book.title
         %td= book.author
         %td= book.description
-        %td= book.rating
         %td= link_to 'Show', book
         %td= link_to 'Edit', edit_book_path(book)
         %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }
