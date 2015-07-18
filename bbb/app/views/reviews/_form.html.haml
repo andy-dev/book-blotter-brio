@@ -1,0 +1,25 @@
+=simple_form_for ([@book, @review]) do |f|
+  -if @review.errors.any?
+    .error_explanation
+      %h2
+      = pluralize(@review.errors.count, "error")
+      prohibited this view from being save
+
+      %ul
+      -@review.errors.full_messages.each do |message|
+        %li= message
+
+  .field
+    #star-rating
+
+  .form-group
+    = f.input :comment, input_html: { class: 'form-control'}
+
+  = f.button :submit, class: "btn btn-primary"
+
+
+:javascript
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
